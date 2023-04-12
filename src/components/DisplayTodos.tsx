@@ -8,7 +8,9 @@ interface ITodoListProps {
 }
 
 function DisplayTodo({ todos, toggleTodo, deleteTodo }: ITodoListProps) {
-	{console.log(todos)}
+	{
+		console.log(todos);
+	}
 	return (
 		<ul id="list-of-todos" className="list">
 			{todos.length === 0 && <p> You have no todos! </p>}
@@ -18,6 +20,7 @@ function DisplayTodo({ todos, toggleTodo, deleteTodo }: ITodoListProps) {
 						todo={todo}
 						toggleTodo={toggleTodo}
 						deleteTodo={deleteTodo}
+						key={todo.id}
 					></TodoItem>
 				);
 			})}
